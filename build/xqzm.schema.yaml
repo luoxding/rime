@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     default: 1646936619
-    default.custom: 1641484448
+    default.custom: 1650171944
     key_bindings: 1646936619
     key_bindings.custom: 0
     punctuation: 1646936619
@@ -10,7 +10,7 @@ __build_info:
     symbols: 1646936619
     symbols.custom: 0
     xqzm.custom: 0
-    xqzm.schema: 1641484255
+    xqzm.schema: 1650171944
 big5:
   charset: big5
   option_name: big5

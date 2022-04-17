@@ -2,11 +2,11 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     default: 1646936619
-    default.custom: 1641484448
+    default.custom: 1650171944
     key_bindings: 1646936619
     key_bindings.custom: 0
     pinyin_xq.custom: 0
-    pinyin_xq.schema: 1629079584
+    pinyin_xq.schema: 1650171944
     punctuation: 1646936619
     punctuation.custom: 0
     symbols: 1646936619
