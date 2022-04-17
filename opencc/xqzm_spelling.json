@@ -1,0 +1,16 @@
+{
+  "name": "xqzm_spelling",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": {
+      "type": "text",
+      "file": "xqzm_spelling_code.txt"
+    }
+  },
+  "conversion_chain": [{
+    "dict": {
+      "type": "text",
+      "file": "xqzm_spelling_code.txt"
+    }
+  }]
+}

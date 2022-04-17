@@ -1,0 +1,205 @@
+# Rime schema settings
+# encoding: utf-8
+# generated at 2021-08-16 10:06:20.107625 by 小泉
+# vim: et:ts=2:sw=2:sts=2:fenc=utf8:ft=yaml
+#
+# [Description]
+#   小泉全郑，超大字集，超大词库，超多符号表情，带九万多单字声调拼音，七万多词组拼音，带有 cjk 字集拆分
+---
+
+schema:
+  schema_id: xqzm
+  name: 小泉郑码
+  version: "0.6.2"
+  author:
+    - "xq / 风入松"
+  description: |
+    小泉全郑，超大字集，超大词库，超多符号表情，带九万多单字声调拼音，七万多词组拼音，带有 cjk 字集拆分
+    输入 ` 进入拼音反查，依赖 pinyin_xq 方案
+  dependencies:
+    - pinyin_xq
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: ["中文", "西文"]
+  - name: full_shape
+    states: ["半角", "全角"]
+  - name: gbk
+    states: [UTF8, GBK]
+  - name: s2t
+    states: [常规, 繁体]
+    reset: 0
+  - name: emoji_suggestion
+    states: [〇, 😊]
+    reset: 0
+  - name: pinyin_tip
+    states: ["拼", "pīn"]
+    reset: 0
+  - name: xqzm_spelling
+    states: ["拆", "扌斥"]
+    reset: 0
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    # - affix_segmentor@jzzc
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - table_translator
+    # - table_translator@fixed
+    # - table_translator@jzzc
+    - reverse_lookup_translator
+    - history_translator@history
+    - lua_translator@datetime_translator
+  filters:
+    - simplifier
+    - charset_filter@gb2312
+    - charset_filter@gbk
+    - charset_filter@big5
+    - simplifier@pinyin_tip
+    - simplifier@emoji_suggestion
+    - reverse_lookup_filter@zhengma_lookup
+    - simplifier@xqzm_spelling
+    - uniquifier
+
+## https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  max_code_length: 4
+  auto_select: false    # 顶字上屏
+  auto_clear: max_length
+  auto_select_unique_candidate: true
+
+# abc_segmentor:
+#   extra_tags:
+#     - reverse_lookup
+
+translator:
+  dictionary: &dict xqzm
+  initial_quality: 1000
+  enable_charset_filter: false
+  enable_sentence: false
+  enable_encoder: false
+  enable_user_dict: false
+  encode_commit_history: false
+  max_phrase_length: 2
+  enable_completion: true
+
+
+# fixed:
+#   db_class: tabledb
+#   __include: /translator
+#   initial_quality: 100
+#   enable_encoder: false
+#   enable_user_dict: false
+
+
+simplifier:
+  opencc_config: s2hk.json
+  option_name: s2t
+  tags: [abc]
+  tips: all
+
+emoji_suggestion:
+  opencc_config: emoji.json
+  option_name: emoji_suggestion
+  tips: all
+
+pinyin_tip:
+  opencc_config: py.json
+  option_name: pinyin_tip
+  show_in_comment: true
+  # overwrite_comment: true
+  comment_format:
+    - "xform@'@/@"
+  tags: [abc]
+  tips: all
+
+xqzm_spelling:
+  opencc_config: xqzm_spelling.json
+  option_name: xqzm_spelling
+  show_in_comment: true
+  comment_format:
+    - "xform@_@ @"
+  tags:
+    - abc
+    - reverse_lookup
+  tips: char
+
+big5:
+  option_name: big5
+  charset: big5
+
+gbk:
+  option_name: gbk
+  charset: gbk
+
+gb2312:
+  option_name: gb2312
+  charset: gb2312
+
+reverse_lookup:
+  closing_tips: "〔郑码〕"
+  dictionary: pinyin_xq
+  prefix: "`"
+  # suffix: ";"
+  tips: 〔拼音反查〕
+  initial_quality: 1
+  preedit_format:
+    - "xform/([nl])v/$1ü/"
+    - "xform/([nl])ue/$1üe/"
+    - "xform/([jqxy])v/$1u/"
+
+zhengma_lookup:
+  tags: [abc, pinyin]
+  dictionary: *dict
+  overwrite_comment: false
+
+history:
+  input: hl
+  size: 1
+  initial_quality: 1
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {when: has_menu, accept: semicolon, send: 2}
+    - {when: has_menu, accept: apostrophe, send: 3}
+    - {when: has_menu, accept: period, send: period}
+    - {when: always, accept: Control+Shift+E, toggle: emoji_suggestion}
+    - {when: always, accept: Control+Shift+F, toggle: s2t}
+    - {when: always, accept: Control+Shift+P, toggle: pinyin_tip}
+    - {when: always, accept: Control+Shift+S, toggle: xqzm_spelling}
+
+editor:
+  bindings:
+    "Control+Return": commit_comment
+
+punctuator:
+  import_preset: symbols
+  half_shape:
+    '#' : '#'
+    '=' : '='
+    '\\': '、'
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^`[a-z]*$"
+    punct: "^/([a-z]+|[0-9]0?)$"

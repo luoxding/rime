@@ -1,0 +1,22 @@
+{
+    "name": "py",
+    "segmentation": {
+        "type": "mmseg",
+        "dict": {
+            "type": "text",
+            "file": "py_ci.txt"
+        }
+    },
+    "conversion_chain": [{
+        "dict": {
+            "type": "group",
+            "dicts": [{
+                "type": "text",
+                "file": "py_ci.txt"
+            }, {
+            "type": "text",
+            "file": "py_zi.txt"
+            }]
+        }
+    }]
+}
