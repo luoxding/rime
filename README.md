@@ -31,3 +31,17 @@ cd ~/.local/share/fcitx5/
 git clone git@github.com:luoxding/rime.git
 ```
 
+## android
+
+### 维护
+数据的维护在termux中进行
+
+- gitrime.sh
+```
+mv ../storage/shared/rime .
+cd rime && chmod +x push.sh
+./push.sh
+cd ../
+mv rime ../storage/shared/rime
+```
+

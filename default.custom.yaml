@@ -1,44 +1,21 @@
-# default.custom.yaml
-# 用户  输入法配置
 customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
+  distribution_code_name: ""
+  distribution_version: ""
   generator: "Rime::SwitcherSettings"
-  modified_time: "Sun Oct  3 21:40:33 2021"
-  rime_version: 1.5.3
+  modified_time: "Mon Sep  5 16:45:39 2022"
+  rime_version: 1.7.3
 patch:
-  schema_list:
-    #- {schema: double_pinyin_xq}
-    - {schema: xqzm}
-    - {schema: pinyin_xq}
-    
-  menu:
-    page_size: 5  # 候选词默认为5个
-    
+  "ascii_composer/switch_key/Shift_L": commit_code
   "key_binder/bindings":
-#  使用方括号翻页
-#  参考：https://www.jianshu.com/p/5b417b24111c
-# PgUp and PgDn
-    - { when: paging, accept: bracketleft, send: Page_Up }
-    - { when: has_menu, accept: bracketright, send: Page_Down }
-# 分号、引号进行二三候选
-# Second and Third Candidate
-    - { when: has_menu, accept: semicolon, send: 2 }
-    - { when: has_menu, accept: apostrophe, send: 3 }
-# 回车清屏
-    - {accept: Return, send: Escape, when: composing}  # 或者为：- { when: has_menu, accept: Return, send: Escape }
-# 快捷键(若要开启,去掉前面的#号)
-    #- {accept: "Control+a", send: Home, when: composing}                   # 光标移至首
-    #- {accept: "Control+e", send: End, when: composing}                    # 光标移至尾
-    - {accept: "Control+Shift+1", select: .next, when: always}             # 切换输入方案
-    #- {accept: "Control+Shift+2", toggle: ascii_mode, when: always}        # 中英文切换
-    #- {accept: "Control+Shift+3", toggle: full_shape, when: always}        # 全角/半角切换
-    - {accept: "Control+Shift+4", toggle: simplification, when: always}    # 繁简体切换
-    #- {accept: "Control+Shift+5", toggle: extended_charset, when: always}  # 通用/增广切换（显示生僻字）
-
-##上屏编码
-  "ascii_composer/switch_key/Shift_L": commit_code  # 左shift上屏,且切换英文
-  #"ascii_composer/switch_key/Shift_R": commit_code  # 右shift上屏,且切换英文
-  
-
-  
+    - {accept: bracketleft, send: Page_Up, when: paging}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+    - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: apostrophe, send: 3, when: has_menu}
+    - {accept: Return, send: Escape, when: composing}
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+  menu:
+    page_size: 5
+  schema_list:
+    - {schema: pinyin_xq}
+    - {schema: xqzm}
