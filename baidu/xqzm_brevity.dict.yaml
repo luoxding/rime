@@ -45,8 +45,8 @@ encoder:
 老	b	2
 聊	c	4
 理	c	3
-把	d	5
-搭	d	4
+把	d	4
+搭	d	3
 草	e	4
 卖	e	3
 某	e	2
@@ -63,16 +63,15 @@ encoder:
 惑	h	2
 步	i	4
 虚	i	3
-啊	j	5
-嗯	j	5
-呢	j	4
-哦	j	3
-呀	j	2
-号	j	1
+啊	j	4
+嗯	j	3
+呢	j	2
+哦	j	1
 少	k	4
 时	k	3
 非	k	2
 罗	l	4
+\	l	3
 答	m	4
 物	m	3
 笑	m	2
@@ -81,7 +80,7 @@ encoder:
 住	n	4
 健	n	3
 像	n	2
-命	o	5
+命	o	4
 坐	o	4
 爱	p	4
 错	p	3
@@ -89,7 +88,7 @@ encoder:
 狗	q	3
 然	r	4
 卵	r	3
-色	r	5
+色	r	2
 就	s	4
 谁	s	2
 帝	s	3
@@ -311,10 +310,10 @@ encoder:
 #整理	fc
 要素	fc
 #需求	fd
-#要求	fd
+要求	fd  6
 检索	fe
 #需要	ff
-想想	ff	5
+想想	ff	3
 想要	ff	4
 检查	ff	3
 机构	ff	2
@@ -512,10 +511,10 @@ encoder:
 晚上	ki
 #影响	kj
 党员	kj
-小时	kk	5
-非常	kk	4
-最少	kk	3
-最小	kk	2
+小时	kk	4
+非常	kk	3
+最少	kk	2
+最小	kk	0
 电影	kk	1
 #常用	kl
 常见	kl
@@ -1096,6 +1095,10 @@ Tab	tab	5
 TAB键	tab	4
 LaTeX	tex	15
 TeX	tex	10
+\part{}	part	6
+\chapter{}	chap	6
+\section{}	sect	6
+\subsection{}	subs	6
 Windows	win
 罗兴定	lvaw	10
 小七孔	khdy
@@ -1122,7 +1125,7 @@ Windows	win
 横焊	feuk	10
 立焊	suuk	5
 仰焊	nruk	5
-拉焊	dsuk15	15
+拉焊	dsuk	15
 焊机	ukfq	15
 焊	uk	4
 焊	uka	3
@@ -1148,7 +1151,7 @@ robertbagrit@gmail.com	mail	80
 # ====================快捷短语====================
 你犹豫了	zzkj
 幸存者偏差	zzkj
-自从拿了证，很喜欢看这些。zzkj
+自从拿了证，很喜欢看这些。	zzkj
 # ====================评论短语====================
 人间非净土，各有各的苦，同是红尘悲伤客，莫笑谁是可怜人，杯中倒满五瓶酒，眼中在无意中人！！！	zzpl
 装得比矿泉水还纯，开得比救护车还急，叫得比警车还响，喷得比消防车还远…	zzpl
@@ -1228,7 +1231,7 @@ wwgx3565	pw
 # ========================标点增补========================
 ## 考虑到手机选标点麻烦，特意增加常用标点。
 ！	h	4
-？	t	5
+？	t	4
 ——	g	3
 、	h	3
 ：	k	1
