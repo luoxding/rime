@@ -1,0 +1,1260 @@
+# dictionary: xqzm_custom dict schema
+# encoding: utf-8
+# vim: noet:ts=8:sw=8:sts=8:fenc=utf8:ft=yaml
+# generated at 2021-08-16 10:06:18.881006 by 小泉
+#
+# [ Description ]
+# 小泉郑码自定义码表
+# 根据研究，词频6在前，5以内在后。原因是主码表词频权重一级简码最高为5，两码表同为5时，用户码表靠后。根据规则，主码表不可动，所以修改用户码表选择词频权重。
+# 主码表以5为词频步进。故也按其规则定义词频。有重码则设为10或5。根据词频需要设置。
+# 注意：使用npp编辑器编辑时，注意TAB按键是否为空格，如是空格，修改方法：设置(T) ⇒ 首选项... ⇒ 语言 ⇒ 标签设置，yaml取消勾选 "以空格取代" 
+
+
+---
+name: xqzm_brevity
+version: "0.6.2"
+sort: weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaBbCa"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaDa"
+
+...
+
+# %%%%%%%%%%%%%%%%%%%%原于首位%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%仅为测试%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%仅为测试%%%%%%%%%%%%%%%%%%%%
+# ====================定义起始====================
+# ====================常用简码====================
+# ====================一级简码====================
+天	a	4
+下	a	3
+正	a	2
+去	b	4
+块	b	3
+老	b	2
+聊	c	4
+理	c	3
+把	d	4
+搭	d	3
+草	e	4
+卖	e	3
+某	e	2
+想	f	4
+本	f	3
+村	f	2
+树	f	1
+不	g	4
+右	g	3
+友	g	2
+确	g	1
+东	h	4
+医	h	3
+惑	h	2
+步	i	4
+虚	i	3
+啊	j	4
+嗯	j	3
+呢	j	2
+哦	j	1
+少	k	4
+时	k	3
+非	k	2
+罗	l	4
+\	l	3
+答	m	4
+物	m	3
+笑	m	2
+乎	m	1
+你	n	5
+住	n	4
+健	n	3
+像	n	2
+命	o	4
+坐	o	4
+爱	p	4
+错	p	3
+脸	q	4
+狗	q	3
+然	r	4
+卵	r	3
+色	r	2
+就	s	4
+谁	s	2
+帝	s	3
+语	s	1
+闲	t	4
+闯	t	2
+疾	t	3
+焊	u	4
+情	u	3
+关	u	2
+灯	u	1
+美	u	1
+兴	v	4
+滚	v	3
+满	v	2
+演	v	1
+字	w	4
+安	w	3
+写	w	2
+书	x	4
+阿	y	4
+飞	y	3
+好	z	5
+她	z	4
+给	z	3
+# ====================二级简码====================
+#一下	aa
+#一天	aa
+#一起	ab
+下来	ab
+#平静	ac
+下班	ac
+形势	ad
+下载	ae	6
+#一直	ae
+#一样	af
+下面	ag	3
+正确	ag	2
+#形成	ah
+一切	ah
+一些	ai
+型号	aj
+#可是	ak
+再见	al
+可见	al
+#严重	am
+政策	am
+一位	an
+一个	ao
+#一般	ap
+可爱	ap
+#一月	aq
+干脆	aq
+更多	ar
+#干部	as
+更新	as
+无论	as
+#政府	at
+一次	at
+可惜	au
+#天津	av
+无法	av
+#一定	aw
+一边	aw
+#开展	ax
+一对	ax
+更加	ay
+可以	az	4
+可能	az	3
+动画	ba
+未来	bb
+#增长	bc
+地球	bc
+教授	bd
+贡献	be
+#规模	bf
+规格	bf
+都有	bg
+地区	bh
+考虑	bi
+#动员	bj
+地图	bj
+专业	bk
+#项目	bl
+工具	bl
+工程	bm
+增值	bn
+#工作	bn
+都会	bo
+#喜爱	bp
+场所	bp
+#二月	bq
+#五月	bq
+域名	br
+超市	bs
+教育	bs
+#专门	bt
+工资	bt
+培养	bu
+来源	bv
+专心	bw
+喜欢	bx
+增加	by
+功能	bz
+聊天	ca
+环境	cb
+#表现	cc
+青春	cc
+表扬	cd
+长期	ce
+#职权	cf
+表格	cf
+耳机	cf
+#现在	cg
+现有	cg
+现成	ch
+静止	ci
+#职员	cj
+球员	cj
+职业	ck
+#帮助	cl
+玩具	cl
+联系	cm
+玩笑	cm
+#现代	cn
+责任	cn
+取得	co
+#现金	cp
+素质	cp
+耳朵	cq
+理解	cr
+理论	cs
+#现状	ct
+长度	ct
+表情	cu
+#表演	cv
+取消	cv
+#丰富	cw
+联通	cw
+现实	cw
+表皮	cx
+球队	cy
+联络	cz
+打开	da
+提示	db
+打工	db
+#提取	dc
+报表	dc
+招聘	dc
+#指挥	dd
+拍摄	dd
+推荐	de
+技术	df
+#扩大	dg
+拥有	dg
+找到	dh
+挑战	di
+接口	dj
+按照	dk
+#打败	dl
+援助	dl
+控制	dm
+提供	dn
+#执行	do
+投入	do
+接受	dp
+摆脱	dq
+#事务	dr
+报名	dr
+提高	ds
+抖音	ds
+#推广	dt
+投资	dt
+#事情	du
+热情	du
+执法	dv
+报道	dw
+扩展	dx
+指导	dy
+才能	dz
+真正	ea
+带来	eb
+获取	ec
+支持	ed
+蔬菜	ee
+#基本	ef
+艺术	ef
+基础	eg
+甚至	eh
+#某些	ei
+截止	ei
+其中	ej
+#世界	ek
+共同	el
+#栽种	em
+某种	em
+其他	en
+获得	eo
+#基金	ep
+营销	ep
+翅膀	eq
+著名	er
+#共计	es
+英语	es	3
+期望	es	2
+#期间	et
+其次	et
+#朝着	eu
+营养	eu
+荔波	ev	4
+荣誉	ev	3
+其实	ew
+基层	ex	2
+卖	ex	3
+故障	ey
+世纪	ez
+模型	fa
+本地	fb
+#整理	fc
+要素	fc
+#需求	fd
+要求	fd  6
+检索	fe
+#需要	ff
+想想	ff	3
+想要	ff	4
+检查	ff	3
+机构	ff	2
+配套	fg
+#整顿	fh
+模式	fh
+#要点	fi
+禁止	fi
+校园	fj
+标题	fk
+配置	fl
+查看	fm
+相信	fn
+#配合	fo
+机会	fo
+#相反	fp
+本质	fp
+本月	fq
+相比	fr
+查询	fs
+#标准	ft
+相应	ft
+相关	fu
+检测	fv
+#档案	fw
+核心	fw
+相对	fx
+权限	fy
+杰出	fz
+不可	ga
+原来	gb
+原理	gc
+有的	gd
+#尤其	ge
+不带	ge
+#不要	gf
+不想	gf
+不在	gg	3
+左右	gg	2
+不到	gh
+有些	gi
+历史	gj
+#大量	gk
+不是	gk	4
+大小	gk	3
+而且	gl
+不知	gm
+不仅	gn
+不会	go
+#面貌	gp
+不错	gp
+大胆	gq
+太多	gr
+有效	gs
+#态度	gt
+顾问	gt
+有关	gu	4
+奇怪	gu	3
+#大学	gv
+不满	gv
+#大家	gw
+不过	gw
+面对	gx
+有限	gy	4
+面子	gy	3
+#友好	gz
+不能	gz
+不好	gz
+至于	ha
+或者	hb
+#成长	hc
+较长	hc
+转换	hd
+转载	he
+#成本	hf
+#东西	hf
+#成套	hg
+较大	hg
+#感到	hh
+车辆	hh
+牙齿	hi
+成员	hj
+至少	hk
+辅助	hl
+转移	hm
+#成份	hn
+软件	hn
+输入	ho
+感受	hp
+威胁	hq
+到处	hr
+感谢	hs
+#到底	ht
+医疗	ht
+#成为	hu
+感情	hu
+#感觉	hv
+医学	hv
+到达	hw
+轴承	hx
+到了	hy
+医院	hy
+#成绩	hz
+输出	hz
+上下	ia
+上来	ib
+#上班	ic
+上联	ic
+虚拟	id
+虚荣	ie
+#战术	if
+虚构	if
+#上面	ig
+桌面	ig
+上车	ih
+叔叔	ii
+上路	ij
+战略	ik
+#占用	il
+上网	il
+#频繁	im
+上午	im
+#督促	in
+上传	in	4
+步伐	in	3
+占领	io
+#此后	ip
+战舰	ip
+战胜	iq
+战争	ir
+#此刻	is
+频率	is
+#战斗	it
+上次	it
+此类	iu
+上半	iu
+#上海	iv
+#上述	iw
+肯定	iw
+#上层	ix
+步骤	ix
+#上级	iz
+上线	iz
+唯一	ja
+回来	jb
+因素	jc
+别的	jd
+#国营	je
+叶	je	5
+中共	je	4
+#只要	jf
+只需	jf
+#只有	jg
+号码	jg
+听到	jh
+因此	ji
+#中国	jj
+嗯	jj	5
+呼吸	jj
+哪里	jk	3
+只是	jk	2
+国内	jl
+回复	jm
+#中华	jn
+咱们	jn
+哪个	jo
+品质	jp
+口腔	jq
+虽然	jr
+#国产	js
+听说	js
+#中间	jt
+回应	jt
+#因为	ju
+兄弟	ju
+中学	jv
+#国家	jw
+回家	jw
+中心	jw
+困难	jx
+国际	jy
+#只能	jz
+由于	ka	4
+明天	ka	3
+昨天	ka	2
+显示	kb
+显现	kc
+坚持	kd
+星期	ke
+日期	ke
+思想	kf
+最大	kg
+#当成	kh
+旺盛	kh
+晚上	ki
+#影响	kj
+党员	kj
+小时	kk	4
+非常	kk	3
+最少	kk	2
+最小	kk	0
+电影	kk	1
+#常用	kl
+常见	kl
+少年	km
+#最佳	kn
+#时候	kn
+电信	kn
+男人	ko
+#最后	kp
+日后	kp
+电脑	kq
+业务	kr
+电话	ks	4
+小说	ks	3
+#时间	kt
+坚决	kt
+当前	ku
+小学	kv
+最近	kw	4
+电视	kw	3
+景观	kx
+电子	ky
+最终	kz
+用于	la
+网址	lb
+助理	lc
+目的	ld
+同期	le
+#同样	lf
+目标	lf
+#具有	lg
+网页	lg
+见到	lh
+网上	li
+#周围	lj
+用品	lj
+贴吧	lj
+同时	lk
+眼睛	ll
+购物	lm
+#具体	ln
+岗位	ln
+同行	lo
+眼镜	lp
+#内脏	lq
+岁月	lq
+财务	lr
+网站	ls
+#幅度	lt
+瞬间	lt
+#目前	lu
+眼前	lu
+#同学	lv
+睡觉	lv
+内容	lw
+购买	lx
+用力	ly
+网络	lz
+每天	ma	3
+系列	ma	2
+移动	mb
+管理	mc
+科技	md
+简直	me
+怎样	mf
+手机	mf
+#重大	mg
+生存	mg
+看到	mh
+重点	mi
+特别	mj
+生日	mk
+利用	ml
+血	ml
+怎么	mm	3
+复制	mm	2
+拜拜	mm	1
+#我们	mn
+制作	mn
+生命	mo
+#先后	mp
+物质	mp
+#复杂	mq
+每月	mq
+特色	mr
+告诉	ms
+重庆	mt
+简单	mu
+#科学	mv
+生活	mv
+知道	mw
+秘书	mx
+种子	my
+年级	mz
+位于	na
+作者	nb
+代表	nc
+保护	nd
+白菜	ne	3
+假期	ne	2
+价格	nf
+保存	ng
+传输	nh
+停止	ni
+作品	nj
+#但是	nk
+使用	nl
+什么	nm	4
+#你们	nn
+#他们	nn
+值得	no
+优质	np
+侵犯	nq
+自然	nr
+保证	ns
+健康	nt
+作为	nu
+#做法	nv
+依法	nv
+促进	nw
+体验	nx
+自己	ny
+传统	nz
+今天	oa
+行动	ob
+合理	oc
+人才	od
+#公共	oe
+分散	oe
+#分析	of
+分配	of
+全面	og
+#得到	oh
+公式	oh
+从此	oi
+#全国	oj
+分别	oj
+企业	ok
+#会见	ol
+合同	ol
+今年	om
+#合作	on
+微信	on	3
+人们	on	2
+个人	oo
+#公斤	op
+分钟	op
+得胜	oq	2
+#舒服	oq	4
+八月	oq	3
+#很多	or
+众多	or
+希望	os
+#彻底	ot
+饭店	ot
+#很快	ou
+行为	ou
+#分清	ov
+合法	ov
+全选	ow	4
+创造	ow	3
+很难	ox
+公司	oy
+介绍	oz
+金融	pa
+#后来	pb
+后者	pb
+#采取	pc
+航班	pc
+链接	pd
+#所需	pf
+彩票	pf
+#所有	pg
+受到	ph
+盘点	pi
+铁路	pj
+质量	pk
+采用	pl
+反复	pm
+#反射	pn
+销售	pn
+#银行	po
+反馈	po
+#钢铁	pp
+键盘	pp
+乳腺	pq
+彩色	pr
+后备	pr
+错误	ps
+#反应	pt
+镜头	pt
+#后悔	pu
+妥善	pu
+航海	pv
+航空	pw
+针对	px
+反弹	py
+#所以	pz
+爱好	pz
+#几百	qa
+几天	qa
+杂志	qb
+月球	qc
+狂热	qd
+月薪	qe
+风格	qf
+#朋友	qg
+独有	qg
+股东	qh
+脸上	qi
+胸口	qj
+#几时	qk
+风景	qk
+#肌肉	ql
+犯罪	ql
+几乎	qm
+#月份	qn
+股份	qn
+几个	qo
+#杂质	qp
+犯错	qp
+脂肪	qq
+#服务	qr
+脸色	qr
+独立	qs
+服装	qt
+风情	qu
+#风波	qv
+风流	qv
+#胜过	qw
+独家	qw
+犹豫	qx
+删除	qy	4
+风险	qy	3
+#几经	qz
+犹如	qz
+冬天	ra
+#各地	rb
+条款	rb
+#争取	rc
+处理	rc
+包括	rd
+#解散	re
+角落	re
+危机	rf
+#备有	rg
+#然而	rg
+比较	rh
+疑虑	ri
+外国	rj
+多少	rk
+处罚	rl
+#各种	rm
+多么	rm
+#条件	rn
+比例	rn
+包含	ro
+#然后	rp
+解释	rp
+#名胜	rq
+触犯	rq
+忽然	rr
+儿童	rs
+#解决	rt
+包装	rt
+#各类	ru
+名单	ru
+#外汇	rv
+备注	rv
+#忽视	rw
+危害	rw
+名字	rw
+印刷	rx
+免费	ry
+比如	rz
+离开	sa
+市场	sb
+部长	sc
+#新的	sd
+交换	sd
+认真	se
+主要	sf
+#方面	sg
+主页	sg
+方式	sh
+试点	si
+产品	sj
+就是	sk	4
+意思	sk	3
+设置	sl
+产生	sm
+文件	sn
+部分	so
+熟悉	sp
+衣服	sq
+音乐	sr
+颜色	sr
+文章	ss
+#高度	st
+新闻	st
+认为	su
+方法	sv
+恋	sw
+方案	sw
+记录	sx
+部队	sy
+详细	sz
+头顶	ta
+广场	tb
+病毒	tc
+广播	td
+痛苦	te
+#次要	tf
+资格	tf
+状态	tg
+减轻	th
+床上	ti
+序号	tj
+#问题	tk
+应用	tl
+#广告	tm
+决策	tm
+#应付	tn
+装修	tn
+装饰	to
+#资金	tp
+背后	tp
+#决胜	tq
+疯狂	tq
+准备	tr
+#北京	ts
+#应该	ts
+#状况	tt
+疾病	tt
+#资料	tu
+次数	tu
+疫情	tu
+资源	tv
+#决定	tw
+冲突	tw
+应对	tx
+间隔	ty
+头发	tz
+#关于	ua
+类型	ua
+灯	ua
+单元	ub
+情	uc	4
+精	uc	3
+关联	uc	2
+#情报	ud
+数据	ud
+快捷	ud
+情节	ue
+性格	uf
+前面	ug	4
+火车	uh
+#为此	ui
+忧虑	ui
+精品	uj
+#数量	uk
+焊	uk
+数量	uk
+粘贴	ul	4
+并且	ul	3
+关系	um
+精华	un
+情人	uo
+#性质	up
+前后	up
+单独	uq
+#快乐	ur
+怀疑	ur
+惊讶	us
+情况	ut
+塑料	uu	2
+烂	uu	3
+关灯	uu	1
+#关注	uv
+数学	uv
+#总之	uw
+精神	uw
+快递	uw
+美观	ux
+为了	uy
+美女	uz	4
+曾经	uz	3
+激烈	va
+活动	vb
+#清理	vc
+治理	vc
+#举报	vd
+没事	vd
+汇报	vd
+学期	ve
+学校	vf	3
+清楚	vf	2
+没有	vg
+汽车	vh
+举止	vi
+#满足	vj
+演员	vj
+浏览	vk
+沉默	vl
+学生	vm
+消息	vn
+#举行	vo
+觉得	vo
+注销	vp	3
+注释	vp	2
+注册	vq
+海外	vr
+漂亮	vs
+滚	vs
+治疗	vt
+海关	vu
+激活	vv	4
+浪漫	vv	3
+沟通	vw
+游戏	vx
+#学院	vy
+学习	vy	3
+消费	vy	2
+演出	vz
+造型	wa
+过去	wb
+道理	wc
+选择	wd
+近期	we
+#这样	wf
+还有	wg
+完成	wh
+这些	wi	4
+视频	wi	3
+心中	wj
+视图	wj
+还是	wk	4
+这是	wk	3
+#实用	wl
+运用	wl
+这么	wm
+#它们	wn
+宣传	wn
+这个	wo
+必须	wp
+心脏	wq
+突然	wr
+实施	ws
+速度	wt
+心情	wu
+违法	wv
+通过	ww	3
+寂寞	ww	2
+实验	wx
+实际	wy
+连续	wz	3
+家乡	wz	2
+属于	xa	4
+即可	xa	3
+展示	xb
+展现	xc
+寻找	xd
+屏幕	xe
+#既要	xf
+又要	xf
+局面	xg
+灵感	xh
+观点	xi
+马路	xj
+展览	xk
+录用	xl
+观看	xm
+即使	xn
+群众	xo
+#矛盾	xp
+承受	xp
+#皮肤	xq
+屁股	xq
+#对比	xr
+既然	xr
+对方	xs
+即将	xt
+尽快	xu
+#预测	xv
+灵活	xv
+难道	xw
+登录	xx
+居民	xy
+#又能	xz
+验收	xz
+强烈	ya
+引起	yb
+加班	yc	4
+办理	yc	3
+办事	yd
+#及其	ye
+改革	ye
+那样	yf	3
+也要	yf	2
+#强大	yg
+障碍	yg
+导致	yh
+#那些	yi
+队员	yj
+也是	yk
+#费用	yl
+引用	yl
+那么	ym
+阶段	yn
+那个	yo
+#民航	yp
+孤	yp
+随后	yp
+孤独	yq
+#除外	yr
+了解	yr
+也许	ys
+力度	yt
+随着	yu
+#办法	yv
+导演	yv
+附近	yw
+驾驶	yx
+孩子	yy
+#已经	yz
+子女	yz
+#参与	za
+以下	za
+出来	zb
+#出现	zc
+#发现	zc
+#发挥	zd
+维护	zd
+经营	ze
+#结束	zf
+结构	zf
+#出面	zg
+如有	zg
+编辑	zh
+#如此	zi
+以上	zi
+出口	zj
+如果	zk
+经典	zl
+发生	zm
+#以便	zn
+如何	zn	3
+她们	zn	4
+纵使	zn	2
+女人	zo
+#以后	zp
+乡镇	zp
+细胞	zq
+#能够	zr
+娱乐	zr
+母亲	zs
+#练习	zt
+出资	zt
+以为	zu
+#经济	zv
+能源	zv
+经过	zw
+发展	zx
+奶	zy
+能力	zy
+继续	zz	5
+媳妇	zz	4
+妈妈	zz	3
+姑娘	zz	2
+姨妈	zz	0
+姐姐	zz	1
+妹妹	zz	1
+# ====================三级简码====================
+阁	trj	9
+智	mjk
+# ================================
+Tab	tab	5
+TAB键	tab	4
+LaTeX	tex	15
+TeX	tex	10
+\part{}	part	6
+\chapter{}	chap	6
+\section{}	sect	6
+\subsection{}	subs	6
+Windows	win
+罗兴定	lvaw	10
+小七孔	khdy
+大七孔	ghdy	15
+板旺	fpkc	6
+时来	kdbk	10
+#拼多多	drvr
+为知笔记	umms	15
+#抖音	dtsk	20
+补卡	wiia
+挂逼	dbwa	10
+找活	dhvm	10
+推油	dnvk	10
+打脸	daqo	10
+微商	olsu
+网贷	lonh
+网购	lolr	50
+三和	cdmj
+三和大神	cmgw	10
+三	c	3
+二保焊	bnju	10
+普工	ukbi
+平焊	auuk	10
+横焊	feuk	10
+立焊	suuk	5
+仰焊	nruk	5
+拉焊	dsuk	15
+焊机	ukfq	15
+焊	uk	4
+焊	uka	3
+单道焊	uwuu	15
+多层多道	rxrw	5
+特种作业操作证	mmnk	10
+操作证	dnms	5
+完活	wbvm	10
+上高	ivsj	6
+产线	smzh	15
+一加	avyj	10
+完犊子了	wmyy	4
+QQ	qq	4
+
+# ====================常用账号====================
+412947296@qq.com	aayx	100
+anthony_lambert@live.com	aayx	90
+robertbagrit@gmail.com	aayx	80
+#-------------------------------------------------
+412947296@qq.com	mail	100
+anthony_lambert@live.com	mail	90
+robertbagrit@gmail.com	mail	80
+# ====================快捷短语====================
+你犹豫了	zzkj
+幸存者偏差	zzkj
+自从拿了证，很喜欢看这些。	zzkj
+# ====================评论短语====================
+人间非净土，各有各的苦，同是红尘悲伤客，莫笑谁是可怜人，杯中倒满五瓶酒，眼中在无意中人！！！	zzpl
+装得比矿泉水还纯，开得比救护车还急，叫得比警车还响，喷得比消防车还远…	zzpl
+# ====================段子短语====================
+这背不拔火罐太可惜了	zzdz
+# ====================银行卡号====================
+# 工商银行卡
+6222032405002149562	poia
+# 中石化油卡
+中石化	jgan
+油卡	vkia
+加油卡	yvki	3
+1000115200005115779	yvki	2
+1000115200005115779	yvij
+测试	zzcs
+# %%%%%%%%%%%%%%%%%%%%原于首位%%%%%%%%%%%%%%%%%%%%
+# ====================定义结束====================
+# ====================常用词组====================
+https://www.baidu.com/	web
+Rime	rime	60
+小狼毫	rime	50
+https://rime.im/	rime	40
+鼠鬚管	rime	30
+中州韵	rime	20
+中州韵输入法引擎	rime	10
+Android	android	1
+markdown	markdown	5
+--------------------------------	line	10
+================================	line	15
+# ====================组式定义====================
+13985083565	zzhm	9
+16608543399	zzhm	8
+16608546636	zzhm	7
+18108540204	zzhm	6
+17685265525	zzhm	5
+15761213024	zzhm	4
+13765753721	zzhm	3
+522722198911290413	zzhm	2
+
+# ====================常用号码====================
+13985083565	mfjg	9
+16608543399	mfjg	8
+13765753721	mfjg	3
+16608546636	mfjg	7
+18108540204	mfjg	6
+17685265525	mfjg	5
+15761213024	mfjg	4
+522722198911290413	nnsj
+# ====================常用地名====================
+贵州省荔波县黎明关乡白岩村甲棒二组36号	zzdz	9
+贵州省黔南州荔波县黎明关乡白岩村甲棒二组36号	zzdz	8
+贵州省黔南州荔波县古镇兔喜快递超市	zzdz
+贵州省荔波县黎明关乡白岩村甲棒二组36号	bvbi	4
+贵州省黔南州荔波县黎明关乡白岩村甲棒二组36号	bvbi	3
+广东省广州市南沙区黄阁镇南沙水恋6-704	bvbi	2
+翁昂	ozkr	10
+甲棒	kifc	10
+白岩	nklg
+拉台	dszj	10
+# ====================常用网址====================
+IP	ip
+204.152.210.48	ip
+#204.152.210.223	ip
+https://www.baidu.com/	lb
+http://note.luoxingding.com/	lb
+# ====================常用代码====================
+wwgx3565	pw
+```	zzmd
+`code`	zzmd
+[]()	zzmd
+![]()	zzmd
+# ====================我的短语====================
+我很快就到，请稍等一会儿。	zzhf
+我在车上，不方便回。	zzhf
+# ====================常用词组====================
+等会	mbob
+# ========================标点增补========================
+## 考虑到手机选标点麻烦，特意增加常用标点。
+！	h	4
+？	t	4
+——	g	3
+、	h	3
+：	k	1
+；	o	1
+“	yija	6	"~中文左引号"
+”	yija	5
+‘	yija	4
+’	yija	3
+"	yija	2
+'	yija	1
+$	ugbr
+□	obyo
+☑	wbhv
+
+\section{}	stex	20
+\chapter{}	stex	19
+\documentclass[options]{class}	stex	18
+\begin{comment}注释\end{comment}	stex	17
+\	stex	3
+
+#复制使用
+#姑娘	zz	2
+
+
+
+
